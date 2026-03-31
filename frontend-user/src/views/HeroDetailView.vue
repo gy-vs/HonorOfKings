@@ -53,7 +53,7 @@ const loadHero = () => {
   isLoading.value = true
   error.value = null
   
-  const heroId = Number(route.params.heroId)
+  const heroId = Number(route.params.id)
   
   if (isNaN(heroId)) {
     error.value = '无效的英雄ID'
@@ -82,9 +82,9 @@ const loadHero = () => {
 const toggleFavorite = () => {
   if (!hero.value) return
   
-  userStore.toggleFavorite(hero.value.id)
+  const isNowFavorite = userStore.toggleFavorite(hero.value.id)
   
-  if (isFavorite.value) {
+  if (isNowFavorite) {
     ElMessage.success(`已将 ${hero.value.name} 添加到收藏`)
   } else {
     ElMessage.info(`已将 ${hero.value.name} 从收藏移除`)
@@ -146,7 +146,17 @@ watch(() => route.params.id, () => {
           </svg>
           返回
         </button>
-       
+        <button
+          class="favorite-btn"
+          :class="{ 'is-favorite': isFavorite }"
+          @click="toggleFavorite"
+          aria-label="收藏"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          {{ isFavorite ? '已收藏' : '收藏' }}
+        </button>
       </div>
 
       <!-- Hero Info Section -->
