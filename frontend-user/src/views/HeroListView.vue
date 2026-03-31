@@ -53,7 +53,7 @@ const filteredHeroes = computed(() => {
 
   // 分类筛选
   if (filterState.selectedCategory !== 'all') {
-    result = result.filter(hero => hero.role !== filterState.selectedCategory)
+    result = result.filter(hero => hero.role === filterState.selectedCategory)
   }
 
   // 搜索筛选（不区分大小写，匹配部分名称）
