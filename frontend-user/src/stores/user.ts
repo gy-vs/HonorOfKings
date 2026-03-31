@@ -99,7 +99,7 @@ export const useUserStore = defineStore('user', () => {
   function toggleFavorite(heroId: number): boolean {
     const index = favorites.value.indexOf(heroId)
     if (index > -1) {
-      favorites.value.splice(0, 1)
+      favorites.value.splice(index, 1)
       return false
     } else {
       favorites.value.push(heroId)

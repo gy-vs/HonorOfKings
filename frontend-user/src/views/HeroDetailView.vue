@@ -53,7 +53,7 @@ const loadHero = () => {
   isLoading.value = true
   error.value = null
   
-  const heroId = Number(route.params.heroId)
+  const heroId = Number(route.params.id)
   
   if (isNaN(heroId)) {
     error.value = '无效的英雄ID'
@@ -82,9 +82,9 @@ const loadHero = () => {
 const toggleFavorite = () => {
   if (!hero.value) return
   
-  userStore.toggleFavorite(hero.value.id)
+  const isNowFavorite = userStore.toggleFavorite(hero.value.id)
   
-  if (isFavorite.value) {
+  if (isNowFavorite) {
     ElMessage.success(`已将 ${hero.value.name} 添加到收藏`)
   } else {
     ElMessage.info(`已将 ${hero.value.name} 从收藏移除`)
@@ -138,7 +138,7 @@ watch(() => route.params.id, () => {
 
     <!-- Hero Content -->
     <div v-else-if="hero" class="hero-content">
-      <!-- Header with back button -->
+      <!-- Header with back button and favorite button -->
       <div class="hero-header">
         <button class="back-btn" @click="goBack" aria-label="返回">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -146,7 +146,20 @@ watch(() => route.params.id, () => {
           </svg>
           返回
         </button>
-       
+        <button 
+          class="favorite-btn" 
+          :class="{ 'is-favorite': isFavorite }" 
+          @click="toggleFavorite"
+          aria-label="收藏"
+        >
+          <svg v-if="isFavorite" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          {{ isFavorite ? '已收藏' : '收藏' }}
+        </button>
       </div>
 
       <!-- Hero Info Section -->
