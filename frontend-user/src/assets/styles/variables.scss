@@ -1,0 +1,80 @@
+// Honor of Kings Theme Variables
+// 王者荣耀主题变量
+
+// Primary Colors - 主色调
+$color-primary: #C8AA6E;        // 王者金色
+$color-primary-dark: #A08050;   // 深金色
+$color-primary-light: #D4BC8A;  // 浅金色
+
+// Background Colors - 背景色
+$color-bg-dark: #0A1428;        // 深蓝背景
+$color-bg-card: #1A2744;        // 卡片背景
+$color-bg-hover: #243B5C;       // 悬停背景
+
+// Text Colors - 文字色
+$color-text-primary: #F0E6D2;   // 主文字色
+$color-text-secondary: #A09B8C; // 次要文字色
+$color-text-muted: #5B5A56;     // 弱化文字色
+
+// Border Colors - 边框色
+$color-border: #785A28;         // 边框色
+$color-border-light: #463714;   // 浅边框色
+
+// Status Colors - 状态色
+$color-success: #0ACF83;
+$color-warning: #F5A623;
+$color-error: #E84057;
+$color-info: #0BC4E2;
+
+// Spacing - 间距
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+
+// Border Radius - 圆角
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// Shadows - 阴影
+$shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+$shadow-hover: 0 8px 24px rgba(200, 170, 110, 0.2);
+$shadow-modal: 0 12px 32px rgba(0, 0, 0, 0.5);
+
+// Transitions - 过渡
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Font Sizes - 字体大小
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+// Font Weights - 字体粗细
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Z-index layers - 层级
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+
+// Breakpoints - 断点
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;

@@ -1,0 +1,221 @@
+// Element Plus Theme Override for Honor of Kings
+// Element Plus 王者荣耀主题覆盖
+
+:root {
+  // Primary colors
+  --el-color-primary: #{$color-primary};
+  --el-color-primary-light-3: #{$color-primary-light};
+  --el-color-primary-light-5: #{lighten($color-primary, 15%)};
+  --el-color-primary-light-7: #{lighten($color-primary, 25%)};
+  --el-color-primary-light-8: #{lighten($color-primary, 30%)};
+  --el-color-primary-light-9: #{lighten($color-primary, 35%)};
+  --el-color-primary-dark-2: #{$color-primary-dark};
+
+  // Background colors
+  --el-bg-color: #{$color-bg-dark};
+  --el-bg-color-page: #{$color-bg-dark};
+  --el-bg-color-overlay: #{$color-bg-card};
+
+  // Text colors
+  --el-text-color-primary: #{$color-text-primary};
+  --el-text-color-regular: #{$color-text-secondary};
+  --el-text-color-secondary: #{$color-text-secondary};
+  --el-text-color-placeholder: #{$color-text-muted};
+  --el-text-color-disabled: #{$color-text-muted};
+
+  // Border colors
+  --el-border-color: #{$color-border-light};
+  --el-border-color-light: #{$color-border-light};
+  --el-border-color-lighter: #{$color-border-light};
+  --el-border-color-extra-light: #{$color-border-light};
+  --el-border-color-dark: #{$color-border};
+  --el-border-color-darker: #{$color-border};
+
+  // Fill colors
+  --el-fill-color: #{$color-bg-card};
+  --el-fill-color-light: #{$color-bg-card};
+  --el-fill-color-lighter: #{$color-bg-hover};
+  --el-fill-color-extra-light: #{$color-bg-hover};
+  --el-fill-color-dark: #{$color-bg-dark};
+  --el-fill-color-darker: #{darken($color-bg-dark, 5%)};
+  --el-fill-color-blank: #{$color-bg-card};
+
+  // Box shadow
+  --el-box-shadow: #{$shadow-card};
+  --el-box-shadow-light: #{$shadow-card};
+  --el-box-shadow-lighter: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --el-box-shadow-dark: #{$shadow-modal};
+
+  // Border radius
+  --el-border-radius-base: #{$border-radius-sm};
+  --el-border-radius-small: #{$border-radius-sm};
+  --el-border-radius-round: #{$border-radius-lg};
+  --el-border-radius-circle: 50%;
+
+  // Mask
+  --el-mask-color: rgba(10, 20, 40, 0.8);
+  --el-mask-color-extra-light: rgba(10, 20, 40, 0.3);
+
+  // Transition
+  --el-transition-duration: #{$transition-normal};
+  --el-transition-duration-fast: #{$transition-fast};
+}
+
+// Button overrides
+.el-button {
+  --el-button-text-color: #{$color-text-primary};
+  --el-button-bg-color: #{$color-bg-card};
+  --el-button-border-color: #{$color-border};
+  --el-button-hover-text-color: #{$color-primary};
+  --el-button-hover-bg-color: #{$color-bg-hover};
+  --el-button-hover-border-color: #{$color-primary};
+
+  &--primary {
+    --el-button-text-color: #{$color-bg-dark};
+    --el-button-bg-color: #{$color-primary};
+    --el-button-border-color: #{$color-primary};
+    --el-button-hover-text-color: #{$color-bg-dark};
+    --el-button-hover-bg-color: #{$color-primary-light};
+    --el-button-hover-border-color: #{$color-primary-light};
+  }
+}
+
+// Input overrides
+.el-input {
+  --el-input-bg-color: #{$color-bg-card};
+  --el-input-border-color: #{$color-border-light};
+  --el-input-hover-border-color: #{$color-border};
+  --el-input-focus-border-color: #{$color-primary};
+  --el-input-text-color: #{$color-text-primary};
+  --el-input-placeholder-color: #{$color-text-muted};
+}
+
+// Card overrides
+.el-card {
+  --el-card-bg-color: #{$color-bg-card};
+  --el-card-border-color: #{$color-border-light};
+  border-radius: $border-radius-md;
+  
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-hover;
+  }
+}
+
+// Dialog overrides
+.el-dialog {
+  --el-dialog-bg-color: #{$color-bg-card};
+  --el-dialog-title-font-size: #{$font-size-lg};
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+}
+
+// Menu overrides
+.el-menu {
+  --el-menu-bg-color: transparent;
+  --el-menu-text-color: #{$color-text-secondary};
+  --el-menu-hover-bg-color: #{$color-bg-hover};
+  --el-menu-active-color: #{$color-primary};
+  --el-menu-item-height: 48px;
+  border: none;
+}
+
+// Tabs overrides
+.el-tabs {
+  --el-tabs-header-height: 48px;
+  
+  .el-tabs__item {
+    color: $color-text-secondary;
+    
+    &.is-active {
+      color: $color-primary;
+    }
+    
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+  
+  .el-tabs__active-bar {
+    background-color: $color-primary;
+  }
+}
+
+// Tag overrides
+.el-tag {
+  --el-tag-bg-color: #{rgba($color-primary, 0.1)};
+  --el-tag-border-color: #{$color-primary};
+  --el-tag-text-color: #{$color-primary};
+}
+
+// Message overrides
+.el-message {
+  --el-message-bg-color: #{$color-bg-card};
+  --el-message-border-color: #{$color-border};
+  border-radius: $border-radius-md;
+}
+
+// Tooltip overrides
+.el-tooltip__popper {
+  --el-tooltip-bg-color: #{$color-bg-card};
+  --el-tooltip-border-color: #{$color-border};
+  --el-tooltip-text-color: #{$color-text-primary};
+}
+
+// Carousel overrides
+.el-carousel {
+  --el-carousel-indicator-bg-color: #{rgba($color-text-primary, 0.3)};
+  --el-carousel-indicator-active-bg-color: #{$color-primary};
+}
+
+// Skeleton overrides
+.el-skeleton {
+  --el-skeleton-color: #{$color-bg-card};
+  --el-skeleton-to-color: #{$color-bg-hover};
+}
+
+// Empty overrides
+.el-empty {
+  --el-empty-fill-color-0: #{$color-bg-card};
+  --el-empty-fill-color-1: #{$color-bg-hover};
+  --el-empty-fill-color-2: #{$color-border-light};
+  --el-empty-fill-color-3: #{$color-text-muted};
+  
+  .el-empty__description {
+    color: $color-text-secondary;
+  }
+}
+
+// Pagination overrides
+.el-pagination {
+  --el-pagination-bg-color: #{$color-bg-card};
+  --el-pagination-text-color: #{$color-text-secondary};
+  --el-pagination-button-color: #{$color-text-primary};
+  --el-pagination-hover-color: #{$color-primary};
+  
+  .el-pager li {
+    background-color: $color-bg-card;
+    
+    &.is-active {
+      background-color: $color-primary;
+      color: $color-bg-dark;
+    }
+  }
+}
+
+// Loading overrides
+.el-loading-mask {
+  background-color: rgba($color-bg-dark, 0.8);
+}
+
+.el-loading-spinner {
+  .circular {
+    .path {
+      stroke: $color-primary;
+    }
+  }
+  
+  .el-loading-text {
+    color: $color-primary;
+  }
+}
